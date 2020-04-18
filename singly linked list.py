@@ -1,13 +1,13 @@
 class node:
     
     #a node basic next and current value of data ans posi
-      def __init__(self,data=None):#initally no data
+      def __init__(self,data):#initally no data
           self.data=data
           self.next=None
 # a singlly  linked list would be ssociated from a head to  tail with  a position and data it is referring to          
-class LinkedList(node):
+class LinkedList:
     def __init__(self):
-        self.head=node()
+        self.head=None
 
     #initiates a node
     #adds new data to  end of current linked list
