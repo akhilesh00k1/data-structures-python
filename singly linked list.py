@@ -60,6 +60,31 @@ class LinkedList:
         previous_node.next=current_node.next#link the neighbours
         current_node=None#delete the fiund node with key value
     ####################deleting by position##############################################################
+    def  delete_position(self,position):
+        current_node=self.head
+        if  position==0:#if the head or 0  position is enterd lets take it as  edge case
+            self.head=current_node.next#make next node the head
+            current_node=None#clear the node
+            return
+        previous_node=None
+        count=1#becoze 0  is edge case
+        while current_node and  count!=position:#traverse through list from head-current node to  the count of desired position 
+            previous_node=current_node#left hand side neighbpout
+            current_node=current_node.next#the node we desire and next to  traverse in list
+            count+=1#posi count
+        if current_node is None:#after the wholw traversing if we dont find any current node with refernce to  posi and node becomes null
+            return
+        previous_node.next=current_node.next#iff found then left side-previous link to  the right side neighbour
+        current_node=None#and the posi is cleared
+    #######################################LENGTH############################################################
+    def length_len(self):
+        current_node=self.head
+        count=0
+        while current_node :
+            count+=1
+            current_node=current_node.next
+        print(count)
+        return count
     
     
 
@@ -72,15 +97,6 @@ class LinkedList:
          
 
 
-
-
-llist=LinkedList()
-llist.append(1)
-llist.append(2)
-llist.append(3 )
-llist.append(4)
-llist.append(5)
-llist.print_list()
 
 
 
