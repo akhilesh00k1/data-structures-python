@@ -85,7 +85,33 @@ class LinkedList:
             current_node=current_node.next
         print(count)
         return count
-    
+    ################################################swapping################################################
+    def swap(self,key1,key2):
+        if key1==key2:#edge cse 1 both data are same
+            return 
+        previous_node1=None
+        current_node1=self.head
+        while current_node1 and current_node1.data!=key1: 
+            previous_node1=current_node1
+            current_node1=current_node1.next
+        previous_node2=None
+        current_node2=self.head
+        if not  current_node1 and not current_node2:
+            return
+#####################################
+    def reverse(self):#A->B->C->D->NULL
+        previous=None#P->NULL
+        current=self.head#C->HEAD(A)
+        while current:#EXISTS
+            next=current.next#B
+            current.next=previous#A->null
+            previous=current#A
+            current=next#B
+        self.head=previous
+        
+
+
+        
     
 
             
